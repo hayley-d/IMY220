@@ -1,0 +1,65 @@
+1. npm init
+2. npm i express
+
+2b. npm install --save-dev @babel/cli @babel/core @babel/preset-env
+
+--save-dev is used when a tool is used for development purposes, the tool might not be required for actual operation of the application
+it saves it as a dev dependacy rather than a normal depedancy
+
+not serving babel as application functionality, using babel as a tool to create the application
+
+@ indicates the packages are scoped (groups related packages together)
+
+2c. create public and src directory and add any files to serve in the public
+
+3. create file called server.js in main directory 
+
+4. fill in the following boilerplate
+import express from "express";
+const app = express();
+app.use(express.static("public"));
+app.listen(3000,()=>{
+  console.log("Server running on port 3000");
+}
+
+
+6. create the babel configuration file called .babelrc
+tells babel what to do
+
+
+7.add the following code:
+  {
+      "presets":["@Babel/preset-env", "@babel/preset-react"]
+  }
+  this tells babel to transpile all ES6 code by default
+
+8.in the package.json where is says scripts add:
+    "build": "babel server.js -d dist",
+    "start": "npm run build && node dist/server.js"
+
+    this means that when you go into command line and try run build it will then run the defined script
+
+  now all you have to type is run start
+
+9. create a indix.js file in the src directory and define react component.
+
+10. npm install react react-dom path
+
+11. npm install --save-dev @babel/preset-react babel-loader webpack webpack-cli
+
+webpack is a module bundler.
+
+if you have many file references and files and it will give you a single js file with all the functionality of the multiple files put together
+
+12. create a webpack config file called webpack.config.js and add the following:
+
+13. in the index.html include the following script tag
+  <script type="text/javascript" src="bundle.js"></script>
+
+
+15. run npx webpack -w if you have lots of files otherwise just add this to your build scripts
+  "build" : "webpack && babel server.js -d dist"....
+
+16. npm install prop-types and in any files where you want to use:
+	import PropTypes from 'prop-types';
+
