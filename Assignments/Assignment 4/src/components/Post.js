@@ -5,17 +5,19 @@ import {EditPost} from './EditPost';
 export class Post extends React.Component{
       constructor(props){
           super(props);
-          this.state = {Editform: false, title: props.title, author:props.author,description: props.description};
+          this.state = {editForm: false, title: props.title, author:props.author,description: props.description};
           this.toggleForm = this.toggleForm.bind(this);
           this.updatePost = this.updatePost.bind(this);
       }
 
       toggleForm(){
-          this.setState(prevState => ({form:!prevState.form}));
+          let isDisplayed = !this.state.editForm;
+          console.log("isDisplayed :" + isDisplayed);
+          this.setState({editForm:isDisplayed});
       }
 
       updatePost(title,description){
-          this.setState({title:title,description:description,Editform:false});
+          this.setState({title:title,description:description,editForm:false});
       }
       
       render(){
@@ -25,10 +27,10 @@ export class Post extends React.Component{
                   <p> {this.state.author} </p>
                   <hr/>
                   <p> {this.state.description} </p>
-                  <button onClick={this.toggleForm}>{this.state.Editform? 'Cancel Edit' : 'Edit Post'}</button>
-                  {this.state.Editform ? (
+                  <button onClick={this.toggleForm}>{this.state.editForm? 'Cancel Edit' : 'Edit Post'}</button>
+                  {this.state.editForm ? (
                       <EditPost title={this.state.title} description={this.state.description} onUpdatePost={this.updatePost}/>
-                    ) : null 
+                    ) : (<h3>{this.state.editForm}</h3>) 
                   }
               </div>
           );
