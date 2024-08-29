@@ -22,12 +22,12 @@ export class Post extends React.Component{
       
       render(){
           return(
-              <div>
-                  <h2> {this.state.title} </h2>
-                  <p> {this.state.author} </p>
+              <div className="card-body">
+                  <h3 className="card-title"> {this.state.title} </h3>
+                  <p className="card-text"> {this.state.author} </p>
                   <hr/>
-                  <p> {this.state.description} </p>
-                  <button onClick={this.toggleForm}>{this.state.editForm? 'Cancel Edit' : 'Edit Post'}</button>
+                  <p className="card-text"> {this.state.description} </p>
+                  <button className="btn btn-dark" onClick={this.toggleForm}>{this.state.editForm? 'Cancel Edit' : 'Edit Post'}</button>
                   {this.state.editForm ? (
                       <EditPost title={this.state.title} description={this.state.description} onUpdatePost={this.updatePost}/>
                     ) : (<h3>{this.state.editForm}</h3>) 

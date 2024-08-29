@@ -20,12 +20,16 @@ export class EditPost extends React.Component{
 
     render(){
         return(
-            <form>
+            <form className="container">
+                <div className="form-group">
                 <label for="title">Post Title</label>
-                <input type="text" name="title" defaultValue={this.props.title} ref={this.titleRef}/>
+                <input type="text" className="form-control" name="title" defaultValue={this.props.title} ref={this.titleRef}/>
+                </div>
+                <div className="form-group">
                 <label for="description">Post Description</label>
-                <input type="text" name="description" defaultValue={this.props.description} ref={this.descriptionRef}/>
-                <button onClick={this.handelSubmit}>Save</button>
+                <input type="text"  className="form-control" name="description" defaultValue={this.props.description} ref={this.descriptionRef}/>
+                </div>
+                <button className="btn btn-primary" onClick={this.handelSubmit}>Save</button>
             </form>
         );
     }
