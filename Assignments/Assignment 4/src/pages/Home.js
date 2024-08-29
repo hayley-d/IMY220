@@ -6,7 +6,8 @@ export class Home extends React.Component{
         return(
                 <div>
                     <h1>Hello Home Page!</h1>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Home   </Link>
+                    
                     <Link to="/posts">Posts</Link>
                 </div>
             );
