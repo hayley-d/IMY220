@@ -1,3 +1,3 @@
 # IMY220
 
-To run: npm start
+My IMY 220 Code
