@@ -1,0 +1,18 @@
+show list of dbs -- show dbs
+specify database -- use DBName
+show collections in db -- show collections
+
+get entire collection -- db.collection_name.find();
+
+insert a document -- db.collection_name.insertOne({ name: "John", age: 30, city: "New York" });
+db.collection_name.insertMany([
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 35 },
+]);
+
+count documents in a collection
+db.collection_name.countDocuments();
+
+delete document -- db.collection_name.deleteOne({ name: "John" });
+
+
