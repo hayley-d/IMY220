@@ -1,10 +1,3 @@
-import express from 'express';
-import path  from 'path'; 
-import { Request, Response } from 'express';
-
-const app = express();
-const PORT = 3000;
-
 enum Priority{
     Low = 1,
     Medium = 2,
@@ -21,36 +14,22 @@ interface Task{
     completed : boolean
 }
 
-app.use(express.static(path.join(__dirname)));
-
-app.get('/', (req: Request,res: Response) =>{
-    res.sendFile(path.join(__dirname, 'index.html')); 
-});
-
-app.use((req: Request, res: Response) => {
-  res.status(404).send('Page not found');
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
-
-class TaskManager{
+ class TaskManager{
     private tasks:Task[];
 
     constructor(tasks:Task[] = []){
         this.tasks = tasks; 
     }
 
-    addTask(task : Task) : void{
+   public addTask(task : Task) : void{
         this.tasks.push(task);
     }
 
-    getTasks():Task[]{
+   public getTasks():Task[]{
         return this.tasks;
     }
 
-    listTasks() : string[]{
+   public listTasks() : string[]{
         const string_tasks : string[] = this.tasks.map((task:Task) =>{
             return `${task.id} | ${task.name}\nPriority: ${task.priority}\nDate: ${task.date}\n` + (task.tags ? task.tags.join(',')+'\n' : '') + `Completed: ${task.completed? 'Yes':'no'}`;
         });
@@ -58,13 +37,13 @@ class TaskManager{
         return string_tasks;
     }
 
-    sortTasksbyPriority() : void{
+    public sortTasksbyPriority() : void{
         this.tasks.sort((a:Task, b:Task) =>{
             return b.priority-a.priority;
         });
     }
 
-    findTask(input : number | string) : Task | undefined{
+    public findTask(input : number | string) : Task | undefined{
         if(typeof input === 'number'){
             return this.tasks.find((task:Task) => task.id === input);
         } else {
@@ -72,4 +51,5 @@ class TaskManager{
         }
     }
 }
+
 

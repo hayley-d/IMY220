@@ -1,25 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
-var path_1 = require("path");
-var app = (0, express_1.default)();
-var PORT = 3000;
 var Priority;
 (function (Priority) {
     Priority[Priority["Low"] = 1] = "Low";
     Priority[Priority["Medium"] = 2] = "Medium";
     Priority[Priority["High"] = 3] = "High";
 })(Priority || (Priority = {}));
-app.use(express_1.default.static(path_1.default.join(__dirname)));
-app.get('/', function (req, res) {
-    res.sendFile(path_1.default.join(__dirname, 'index.html'));
-});
-app.use(function (req, res) {
-    res.status(404).send('Page not found');
-});
-app.listen(PORT, function () {
-    console.log("Server running on http://localhost:".concat(PORT));
-});
 var TaskManager = /** @class */ (function () {
     function TaskManager(tasks) {
         if (tasks === void 0) { tasks = []; }
@@ -52,3 +36,5 @@ var TaskManager = /** @class */ (function () {
     };
     return TaskManager;
 }());
+// Expose TaskManager to global scope
+window.TaskManager = TaskManager;

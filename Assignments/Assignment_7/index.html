@@ -75,8 +75,8 @@
     </div>
   </body>
   <script src="index.js">
-  
     const tm = new TaskManager();
+    console.log(tm);
     function displayTasks() {
       const tasksElement = document.getElementById("tasks");
       let tasks = tm.listTasks();
@@ -87,6 +87,7 @@
         tasksElement.appendChild(li);
       });
     }
+
     function addTask() {
       const taskElement = document.getElementById("task");
       const categoryElement = document.getElementById("category");
