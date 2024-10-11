@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc server.ts",
-    "start": "npm run build && node server.js"
+    "build": "npx tsc index.ts",
+    "start": "npm run build && node index.js"
   },
   "keywords": [],
   "author": "",
