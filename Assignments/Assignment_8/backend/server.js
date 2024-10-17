@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 const PORT = 3001;
-app.use('/api', UserRoutes);
+app.use('/api', Routes);
 
 app.use(express.static(path.resolve("./frontend/public")));
 
