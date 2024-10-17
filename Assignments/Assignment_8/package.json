@@ -1,19 +1,20 @@
 {
   "name": "assignment_8",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "frontend/src/index.tsx",
   "scripts": {
-    "build": "npx tsc index.ts",
-    "start": "npm run build && node server.js",
-    "dev":"nodemon server.js"
+    "build": "webpack && babel backend/server.js -d backend/dist",
+    "start": "npm run build && node backend/dist/server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "H Dodkins u21528790",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "express": "^4.21.1",
+    "@babel/preset-react": "^7.25.7",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
     "body-parser": "^1.20.2",
     "class-variance-authority": "^0.7.0",
@@ -32,11 +33,20 @@
     "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
+    "@babel/preset-typescript": "^7.25.7",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.7.6",
+    "@types/node-fetch": "^2.6.11",
+    "babel-loader": "^9.2.1",
     "concurrently": "^9.0.1",
     "nodemon": "^3.1.7",
+    "source-map-loader": "^5.0.0",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "webpack-cli": "^5.1.4"
   }
 }

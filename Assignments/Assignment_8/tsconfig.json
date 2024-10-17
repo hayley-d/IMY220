@@ -1,11 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "es5",
+    "module": "es6",
     "skipLibCheck":true,
     "esModuleInterop": true,    
-    "strict": true       
+    "strict": true,
+    "outDir": "./dist/",       
+    "sourceMap": true,       
+    "strictNullChecks": true,
+    "jsx": "react",    
+    "allowJs": true,
+    "typeRoots": [
+        "./node_modules/@types"
+    ]
   },
-  "include":["**/*.ts"],
-  "exclude":["node_modules"]
+  "include":["**/*"],
+  "exclude":["node_modules","dist"]
 }
