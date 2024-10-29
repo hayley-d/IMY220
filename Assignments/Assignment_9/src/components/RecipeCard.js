@@ -1,4 +1,4 @@
-
+import React from 'react'
 
 export class RecipeCard extends React.Component {
   constructor(props) {
@@ -7,7 +7,7 @@ export class RecipeCard extends React.Component {
   }
 
   onClick() {
-    this.props.setCurrentRecipe(props.id);
+    this.props.setCurrentRecipe(this.props.id);
   }
 
   render() {
@@ -15,7 +15,7 @@ export class RecipeCard extends React.Component {
       <div>
         <h2>{this.props.title}</h2>
         <p>{this.props.description}</p>
-        <button onClick={onClick}>View Recipe</button>
+        <button onClick={this.onClick}>View Recipe</button>
       </div>
     );
   }
