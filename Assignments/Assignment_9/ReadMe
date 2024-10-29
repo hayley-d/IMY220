@@ -1,0 +1,34 @@
+.babelrc
+    File was empty, I added babel config.
+
+server.js changes:
+    Line 3: changed const app = expresso() to const app = express() because package is called and imported as express.
+    Line 6: Changed get to use for app.get() -> app.use()
+    When 
+
+
+index.js
+    Line 8: Added component to the render function as it was initially empty.
+    Line 3: Added curly brackets around App component import as I added export.
+
+App.js
+    Line 3: Added RecipePage import
+    Line 5: I added export before the class keyword as the component was not being exported.
+    Line 9: I changed props to state in the constructor when declaring the initial state of the component.
+    Line 13: Bind this to the componentDidMount function so it can access the component's state.
+    Line 16: changed the function from componentDidUpdate to componentDidMount
+    Line 10: Changed the initial recipes state from a string "[]" to an empty array []
+    Line 15: Changed how the server response is handeled. I added error handling and check to see if the response was vaild.
+    Line 32: changed single = to a === to do a check for the id in value.
+    Changed the key in the map to guaruntee it is unique.
+
+RecipePage.js
+    Line 3: Added export before the class keyword.
+    Line 9: return was not in the render function so I moved it inside the render function.
+    Line 15: Added check to see if the array is defined before calling map
+    Line 16: No key was declared in the map function so I added a key to the list with the value of the index.
+
+RecipeCard.js
+    Line 1: Added react import statement as it was initially missing.
+    Line 10: Added this infront of the props.id
+    Line 18: Added this. infront of the method name for the on click action to refer to the defined function in the component.
