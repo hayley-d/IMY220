@@ -1,0 +1,16 @@
+1. updates node modules vuleralbilities found
+2. no start scripts
+3.webpack config line 7: changed ./public -> public for path resolve
+4. Babel config was empty added lines to the file.
+5. Line 22 TodoInput.js added check to see if title and conctent are present6. Added export default to TodoInput to export the class component. (line 3)
+7. Added React import l on line 1 of TodoItem.js
+8. Added undefined check to TodoList on line 12
+9. Line 10 TodoInput.js used bind to bind class this to function this
+10. Line 11 TodoInput added bind to the handleSubmit function
+11. Line 22 TodoInput added preventDefault to prevent default form submit
+12. Line 33 TodoInput props are in an object called props so props.props
+13. Line 12 TodoList props are in an object called props.
+14. Line 13 TodoList added key to the TodoItem as every created component needs it when using map.
+15. Multiple lines TodoItem used className instead of class
+16. Added prevState when setting state in App.js addTodo and RemoveTodo
+17. Added anonymous function for onlcick event line 18 TodoList
