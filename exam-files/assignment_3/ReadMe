@@ -1,0 +1,6 @@
+This assignment makes use of Ref to do a search through an array of events to display them is ascending order by date.
+
+React Concepts Used:
+- Ref
+- State
+- Function passing between parent and child components
